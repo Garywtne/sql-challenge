@@ -31,6 +31,7 @@ I started by reviewing the contents of the 6 csv files then sketched out an ERD 
 
 I used this tool to list the Tables and thier Fields so that i could identify the Relasionships, Datatypes and Primary Keys.
 
+<<<<<<< HEAD
 ![ERD Diagram 00](EmployeeSQL/Images/ERD-Employee_db_00.png)
 
 ## ii. Data Engineering <a id="data-engineering"></a>
@@ -51,6 +52,28 @@ I also had to change the # - Locale and Formatting - datestyle setting in the po
 I have been asked to 8 lists by my employer, i created a seperate query for each list.
 
 The code and output is shown below:
+=======
+![ERD_Employee_db_00](https://user-images.githubusercontent.com/85430216/166204754-efb41af9-150c-4ff3-ae5c-2960c13e7c0f.png)
+
+
+## ii. Data Engineering <a id="data-engineering"></a>
+
+The ERD is refined adding the relasionships between the individual Fields using Foriegn Keys to create a more detailed
+
+![ERD_Employee_db_01](https://user-images.githubusercontent.com/85430216/166204830-2dbd8b52-3c3f-4cf4-9b17-f24c5cf2a0ef.png)
+
+
+Quick DB creates an SQL which I exported, this code was used to create the Schemata using [pgAdmin](https://www.pgadmin.org/).
+
+The data from each CSV file was imported to it's relevant SQL Table using the import tool. It is very important that the csv files are imported in the same order as the tables are created in the Schemata.
+
+I also had to change the # - Locale and Formatting - datestyle setting in the postgressql.conf to datestyle = 'iso, mdy'  
+
+
+## iii. Data Analysis <a id="data-analysis"></a>
+
+My employer has asked me to create 8 lists, i created a seperate query for each list, the code and first 8 lines of output is shown below:
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 
@@ -64,7 +87,11 @@ FROM employees as e
     ON (e.emp_no = s.emp_no)
 ORDER BY e.last_name;
 
+<<<<<<< HEAD
 ![Query1](EmployeeSQL/Images/Q1.PNG)
+=======
+![Q1](https://user-images.githubusercontent.com/85430216/166204967-6a5dc2cd-e3b6-4723-90ed-67c137f9214d.PNG)
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 2. List first name, last name, and hire date for employees who were hired in 1986.
 
@@ -75,7 +102,11 @@ BETWEEN '1986-01-01'
 AND '1986-12-31'
 ORDER BY last_name;
 
+<<<<<<< HEAD
 ![Query2](EmployeeSQL/Images/Q2.PNG)
+=======
+![Q2](https://user-images.githubusercontent.com/85430216/166205016-1e66eb83-8694-4f13-8c61-16a17e156a9a.PNG)
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name
 
@@ -91,7 +122,11 @@ FROM	dept_manager AS dm
 	ON (dm.emp_no = e.emp_no)
 ORDER BY d.dept_name;
 
+<<<<<<< HEAD
 ![Query3](EmployeeSQL/Images/Q3.PNG)
+=======
+![Q3](https://user-images.githubusercontent.com/85430216/166205039-221676ea-5883-43bc-bf80-c1a7757bfcb9.PNG)
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 
@@ -105,6 +140,7 @@ FROM employees AS e
 	INNER JOIN departments AS d
 	ON (de.dept_no = d.dept_no)
 ORDER BY e.last_name;
+<<<<<<< HEAD
 
 ![Query4](EmployeeSQL/Images/Q4.PNG)
 
@@ -152,6 +188,54 @@ ORDER BY e.last_name;
 
 ![Query7](EmployeeSQL/Images/Q7.PNG)
 
+=======
+
+![Q4](https://user-images.githubusercontent.com/85430216/166205074-f96e27fd-d8b0-4830-89be-b7e087b3eb89.PNG)
+
+5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+
+SELECT	First_name,
+		last_name,
+		sex
+FROM employees
+WHERE first_name ='Hercules'
+AND last_name LIKE 'B%'
+ORDER BY last_name;
+
+![Q5](https://user-images.githubusercontent.com/85430216/166205095-341dff86-808e-4454-a6ca-83322281ba43.PNG)
+
+6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+
+SELECT	e.emp_no,
+		e.last_name,
+		e.first_name,
+		d.dept_name
+FROM employees AS e
+	INNER JOIN dept_emp AS de
+	ON (e.emp_no = de.emp_no)
+	INNER JOIN departments AS d
+	ON (de.dept_no = d.dept_no)
+WHERE d.dept_name = 'Sales'
+ORDER BY e.last_name;
+
+![Q6](https://user-images.githubusercontent.com/85430216/166205122-77307537-cf7d-4b99-a350-58915c1d7575.PNG)
+
+7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+
+SELECT	e.emp_no,
+		e.last_name,
+		e.first_name,
+		d.dept_name
+FROM employees AS e
+	INNER JOIN dept_emp AS de
+	ON (e.emp_no = de.emp_no)
+	INNER JOIN departments AS d
+	ON (de.dept_no = d.dept_no)
+WHERE d.dept_name IN ('Sales', 'Development')
+ORDER BY e.last_name;
+
+![Q7](https://user-images.githubusercontent.com/85430216/166205135-1104f7d1-902b-4f91-97f7-81c973f11b90.PNG)
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 8. List the frequency count of employee last names (i.e., how many employees share each last name) in descending order.
 
@@ -162,7 +246,11 @@ GROUP BY last_name
 ORDER BY COUNT(last_name)
 DESC;
 
+<<<<<<< HEAD
 ![Query8](EmployeeSQL/Images/Q8.PNG)
+=======
+![Q8](https://user-images.githubusercontent.com/85430216/166205174-ae345113-a17b-49ff-8e59-c7736f593329.PNG)
+>>>>>>> 03256f529ca56d14ab61f0ba544883ee6e2c3f62
 
 ## Submission
 
