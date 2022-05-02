@@ -164,15 +164,15 @@ DESC;
 
 ## Submission
 
-* Create an image file of your ERD.
+* I Created an image files of my initial and refined ERD.
 
-* Create a `.sql` file of your table schemata.
+* I created an `.sql` file of my table schemata.
 
-* Create a `.sql` file of your queries.
+* I Created a `.sql` file of my queries.
 
-* Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
+* I Created and uploaded a repository with the above files to GitHub and posted a link on BootCamp Spot.
 
-* Ensure your repository has regular commits and a thorough README.md file
+* I have Ensured that my repository has regular commits and a thorough README.md file
 
 ## Rubric
 
