@@ -164,11 +164,11 @@ DESC;
 
 ## Submission
 
-* I Created an image files of my initial and refined ERD.
+* I Created an image files of my initial (ERD_Employee_db_00.png) and refined (ERD_Employee_db_01.png) ERD.
 
-* I created an `.sql` file of my table schemata.
+* I created an `.sql` file of my table schemata (Schemata_Employees_db_01.sql)
 
-* I Created a `.sql` file of my queries.
+* I Created a `.sql` file of my queries (Queries_Employees_db_01.sql)
 
 * I Created and uploaded a repository with the above files to GitHub and posted a link on BootCamp Spot.
 
