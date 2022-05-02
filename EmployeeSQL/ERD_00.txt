@@ -1,0 +1,39 @@
+titles
+rel employees
+-
+title_id VARCHAR PK
+title VARCHAR
+
+employees
+rel saleries
+rel dept_emp
+rel dept_manager
+-
+emp_no INT PK
+emp_title_id VARCHAR
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+departments
+rel dept_manager
+-
+dept_no VARCHAR PK
+dept_name VARCHAR
+
+dept_emp
+-
+emp_no INT PK
+dept_no VARCHAR PK
+
+dept_manager
+-
+dept_no VARCHAR PK
+emp_no INT PK 
+
+saleries
+-
+emp_no INT PK
+salary INT

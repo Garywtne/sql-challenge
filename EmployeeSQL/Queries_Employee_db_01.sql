@@ -1,4 +1,4 @@
-﻿-- ### Data Analysis
+-- ### Data Analysis
 
 -- Once you have a complete database, perform these steps:
 
