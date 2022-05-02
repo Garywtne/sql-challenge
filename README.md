@@ -31,6 +31,7 @@ I started by reviewing the contents of the 6 csv files then sketched out an ERD 
 
 I used this tool to list the Tables and thier Fields so that i could identify the Relasionships, Datatypes and Primary Keys.
 
+![ERD_Employee_db_00](https://user-images.githubusercontent.com/85430216/166208127-b186a5c6-eae9-4562-9efd-9d6e4deeb168.png)
 
 
 ## ii. Data Engineering <a id="data-engineering"></a>
